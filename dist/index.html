@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport", content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="page.css">
+        <link rel="stylesheet" href="forms.css">
+
+    </head>
+    <body>
+        <header>
+            <h1>TO DO LIST</h1>
+        </header>
+        <div id="content">
+            <nav class="projectList">
+                <button id="newPro">Create a new project</button>
+            </nav>
+            <section class="projectDisplay">
+                <div>
+                    <button id="newTask">+</button>
+                </div>
+            </section>
+        </div>
+        <section class="form">
+            <h2>Create a task</h2>
+            <form id="todo">
+                <div>
+                    <label for="title">Title: </label> <br>
+                    <input id="title" type="text" required>
+                </div>
+                <div>
+                    <label for="description">Description: </label><br>
+                    <input id="description" type="text">
+                </div>
+                <div>
+                    <label for="dueDate">Due date: </label> 
+                    <input id="dueDate" type="date">
+                </div>
+                <div>
+                    <label for="priority">Priority: </label>
+                    <select id="priority">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                
+                <div class="submit">
+                    <button class="cancel">Cancel</button>
+                    <input type="submit" value="Submit" placeholder="Submit"></div>
+            </form>
+        </section>
+        <section class="form">
+            <h2>Create a project</h2>
+            <form id="project">
+                <div>
+                    <label for="name">Name: </label> <br>
+                    <input id="name" type="text" required>
+                </div>
+                <div>
+                    <label for="note">Note: </label> <br>
+                    <input id="note" type="text">
+                </div>
+                
+                <div class="submit">
+                    <button class="cancel">Cancel</button>
+                    <input type="submit" value="Submit" placeholder="Submit"></div>
+            </form>
+        </section>
+        <footer><i>This app is designed by miang</i></footer>
+        <script src="main.js"></script>
+    </body>
+</html>

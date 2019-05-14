@@ -1,0 +1,79 @@
+/* stye the page for desktop view */
+*{
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+html,body{
+    margin: 0;
+    padding: 0;
+}
+header{
+    background-color: lightblue;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 10vh;
+    text-align: center;
+    z-index: 1;
+}
+#content{
+    display: flex;
+    height: 85vh;
+}
+.projectDisplay{
+    margin-top: 10vh;
+    width: 80%;
+    height: 85vh;
+    position: relative;
+}
+nav{
+    background-color: whitesmoke;
+    margin-top: 10vh;
+    width: 20%;
+    height: 85vh;
+    border-right: 1px solid black;
+}
+.projectList button{
+    background-color: blue;
+    border-radius: 5px;
+    border: 1px solid whitesmoke;
+    padding: 10px;
+    width: 100%;
+    color: white;
+    font-size: 15px;
+}
+.projectDisplay button{
+    background-color: blue;
+    color: white;
+    border-radius: 100%;
+    padding: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    border: 1px solid whitesmoke;
+    width: 30px;
+    height: 30px;
+}
+.projectDisplay button:hover::after{
+    content: "add a new task";
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+}
+footer{
+    height: 5vh;
+    background-color: lightblue;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    line-height: 5vh;    
+}
+#content button:hover{
+    background-color: grey;
+    
+}
+

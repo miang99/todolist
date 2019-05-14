@@ -1,0 +1,48 @@
+/* style the forms */
+.form{
+    border: 2px solid black;
+    text-align: center;
+    width: 50%;
+    display: none;
+}
+form{
+    margin: 5px auto;
+    text-align: left;
+    width: 85%; 
+}
+form div{
+    margin: 10px 0;
+    
+}
+input{
+    width: 100%;
+    margin-top: 5px;
+}
+#dueDate{
+    height: 25px;
+    width: 72%;
+}
+#description, #note{
+    height: 50px;
+}
+#note{
+    margin-bottom: 15px;
+}
+.submit{
+    margin: 10px auto;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+}
+.submit button, input[type="submit"]{
+    border: 1px solid whitesmoke;
+    width: 80px;
+    height: 30px;
+    border-radius: 3px;
+    background-color: lightblue;
+    margin-left: 5px;  
+}
+.submit button{
+    background-color: lightgrey;
+}
