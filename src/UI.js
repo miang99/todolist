@@ -9,7 +9,7 @@ const displayForm = (element) =>{
 }
 //submit buttons
 const submitPro = (projects) =>{
-    console.log(projects);
+    console.table(projects);
     createProject(projects);
     setLocalStorage(projects);
     console.table(projects);
@@ -18,4 +18,5 @@ const submitTask =(tasks) =>{
     createTask(tasks);
     console.table(tasks);
 }
+
 export {hideForm ,displayForm, submitPro, submitTask}
