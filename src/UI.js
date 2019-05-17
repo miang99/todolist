@@ -14,9 +14,13 @@ const submitPro = (projects) =>{
     setLocalStorage(projects);
     console.table(projects);
 }
-const submitTask =(tasks) =>{
-    createTask(tasks);
-    console.table(tasks);
+const submitTask =(projects) =>{
+    createTask(projects);
+    console.table(projects);
+    setLocalStorage(projects);
+}
+const setKeyToElement = (element, index) =>{
+    element.setAttribute('data-key', index);
 }
 
-export {hideForm ,displayForm, submitPro, submitTask}
+export {hideForm ,displayForm, submitPro, submitTask, setKeyToElement}

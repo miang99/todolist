@@ -16,8 +16,10 @@ const createProject = (projects) =>{
     const newPro = setProjectInfo();
     projects.push(newPro);
 }
-const createTask = (tasks) =>{
+const createTask = (projects) =>{
     const newTask = setTaskInfo();
+    const index = document.getElementById('todo').getAttribute('data-key');
+    const tasks = projects[index].tasks;
     tasks.push(newTask);
 }
 

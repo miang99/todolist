@@ -17,8 +17,6 @@ const cancelButton = document.getElementsByClassName('cancel');
 window.onload = () =>{
     displayProject(projects);
 };
-
-
 [...cancelButton].forEach((element) =>{
     element.addEventListener('click', (e) =>{
         element = e.target.parentNode.parentNode;
@@ -33,10 +31,11 @@ projectForm.addEventListener('submit',(e) =>{
     submitPro(projects);
     e.target.reset();
     hideForm(projectForm);
+    displayProject(projects);
 });
 taskForm.addEventListener('submit',(e)=>{
     e.preventDefault();
-    submitTask(tasks, projects);
+    submitTask(projects);
     e.target.reset();
     hideForm(taskForm);
 
