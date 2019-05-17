@@ -27,7 +27,7 @@ window.onload = () =>{
     });
 });
 document.getElementById('newPro').addEventListener('click', displayForm.bind(null, projectForm) );
-//document.getElementById('newTask').addEventListener('click', displayForm.bind(null, taskForm));
+// document.getElementById('newTask').addEventListener('click', displayForm.bind(null, taskForm));
 projectForm.addEventListener('submit',(e) =>{
     e.preventDefault();
     submitPro(projects);
@@ -36,7 +36,7 @@ projectForm.addEventListener('submit',(e) =>{
 });
 taskForm.addEventListener('submit',(e)=>{
     e.preventDefault();
-    submitTask(tasks);
+    submitTask(tasks, projects);
     e.target.reset();
     hideForm(taskForm);
 

@@ -1,5 +1,5 @@
 import {getData} from './store';
-
+import {displayForm} from './UI.js'
 
 const displaylist = (parent,content,index, nameClass,action) =>{
     let child = document.createElement('div');
@@ -19,27 +19,31 @@ const displayProject = (projects) =>{
     }
 }
 const projectDetail = (e) =>{
-    console.log(e);
     const projects = getData();
     const index = Number(e.target.getAttribute('data-key'));
-    console.log(index);
     const project = projects[index];
     const name = project.name;
     const note = project.note;
     const tasks = project.tasks;
     return {index, name, note, tasks}
 }
-const displayTask = (tasks) =>{
-    
+const addButton = () =>{
+    const parent = document.querySelector('.projectDisplay');
+    let child = document.createElement('div');
+    child.innerHTML = '<button id="newTask">+</button>';
+    const taskForm = document.getElementById('todo');
+    child.addEventListener('click',displayForm.bind(null, taskForm)); 
+    parent.appendChild(child);
+      
 }
 const displayPro = (e) =>{
     const pro = projectDetail(e);
-    const parent = document.querySelector('.projectDisplay');
-    const title = `<h2>${pro.name}</h2>  <button id="newTask">+</button>`;
-    const index = pro.index;
-    const nameClass = 'proTitle'
+    const parent = document.querySelector('.proTitle');
+    const title = `<h2>${pro.name}</h2>  `;
+    const nameClass = 'proTitle';
     parent.innerHTML = '';    //reset the container
-    displaylist(parent,title,index, nameClass);
+    displaylist(parent,title,pro.index, nameClass);
+    addButton();
 }
 
 
