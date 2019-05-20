@@ -1,0 +1,15 @@
+.pro{
+    font-weight: bold;
+    font-size: 18px;
+    overflow: auto;
+    background-color: yellow;
+}
+.deletePro{
+    background-color: lightblue;
+    width: 40%;
+    margin: auto;
+    border: 2px solid white;
+    border-radius : 5px;
+    text-align: center;
+    cursor: pointer;
+}

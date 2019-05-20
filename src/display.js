@@ -1,7 +1,7 @@
 import {getData} from './store';
-import {displayForm, setKeyToElement} from './UI.js';
+import {displayForm} from './UI.js';
 import {taskDisplay} from './taskDisplay.js';
-
+import {deleteProject} from './setting.js';
 const displaylist = (parent,content,index, nameClass,action) =>{
     let child = document.createElement('div');
     child.innerHTML = content;
@@ -28,21 +28,27 @@ const projectDetail = (e) =>{
     const tasks = project.tasks;
     return {index, name, note, tasks}
 }
-const addButton = (index) =>{
+// Button of project
+const plusButton = (index) =>{
     const parent = document.querySelector('.projectDisplay');
     let child = document.createElement('div');
-    child.innerHTML = '<button id="newTask">+</button>';
+    child.setAttribute('id','newTask');
+    child.innerText = '+';
     let taskForm = document.getElementById('todo');
     child.addEventListener('click',displayForm.bind(null, taskForm)); 
     parent.appendChild(child);
-    setKeyToElement(taskForm, index);
+    taskForm.setAttribute('data-key', index);
       
 }
-const deleteButton = () =>{
+const deleteProButton = (index) =>{
+    const parent = document.querySelector('.projectDisplay');
+    const content = '<h5>Delete project</h5>';
+    displaylist(parent, content, index, 'deletePro',deleteProject);
+}
+const deleteButton = (button) =>{
     console.log('delete');
-    const button = document.getElementById('newTask');
     if(button){
-        button.parentNode.parentNode.removeChild(button.parentNode);
+        button.parentNode.removeChild(button);
     };
 }
 const displayPro = (pro) =>{
@@ -55,9 +61,11 @@ const displayPro = (pro) =>{
 const displayInfo = (e) =>{
     const pro = projectDetail(e);
     displayPro(pro);
-    deleteButton();
-    addButton(pro.index);
+    deleteButton(document.getElementById('newTask'));
+    plusButton(pro.index);
     taskDisplay(pro.tasks, pro.index);
+    deleteButton(document.querySelector('.deletePro'));
+    deleteProButton(pro.index);
 }
 
 export {displayProject}

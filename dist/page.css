@@ -43,7 +43,7 @@ nav{
     color: white;
     font-size: 15px;
 }
-.projectDisplay button{
+#newTask{
     background-color: blue;
     color: white;
     border-radius: 100%;
@@ -57,7 +57,7 @@ nav{
     width: 30px;
     height: 30px;
 }
-.projectDisplay button:hover::after{
+#newTask:hover::after{
     content: "add a new task";
     background-color: white;
     border: 1px solid black;
@@ -73,7 +73,17 @@ footer{
     line-height: 5vh;    
 }
 #content button:hover{
-    background-color: grey;
-    
+    background-color: grey;  
+}
+/* style the information */
+.pro{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid white;
+}
+.pro:hover{
+    background-color: lightblue;
 }
 

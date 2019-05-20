@@ -19,8 +19,6 @@ const submitTask =(projects) =>{
     console.table(projects);
     setLocalStorage(projects);
 }
-const setKeyToElement = (element, index) =>{
-    element.setAttribute('data-key', index);
-}
 
-export {hideForm ,displayForm, submitPro, submitTask, setKeyToElement}
+
+export {hideForm ,displayForm, submitPro, submitTask}
