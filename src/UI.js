@@ -1,5 +1,7 @@
 import {createProject, createTask} from './setData.js';
 import {setLocalStorage} from './store.js';
+import {deleteProject} from './setting.js';
+
 // form display
 const hideForm = (element) =>{
     element.parentNode.style.display = 'none';
@@ -9,7 +11,6 @@ const displayForm = (element) =>{
 }
 //submit buttons
 const submitPro = (projects) =>{
-    console.table(projects);
     createProject(projects);
     setLocalStorage(projects);
     console.table(projects);
@@ -19,6 +20,41 @@ const submitTask =(projects) =>{
     console.table(projects);
     setLocalStorage(projects);
 }
+// buttons of Project
+const deleteButton = (button) =>{
+    if(button){
+        button.parentNode.removeChild(button);
+    };
+}
+const createButton = (idName, content, action, index=null) =>{
+    const parent = document.querySelector('.projectDisplay');
+    let child = document.createElement('div');
+    child.setAttribute('id',idName);
+    child.innerHTML = content;
+    child.addEventListener('click', action);
+    parent.appendChild(child);    
+    if(index){ 
+        child.setAttribute('data-key', index);
+    }
+}
+const displayPlusButton = (index) =>{
+    const button = document.getElementById('newTask');
+    deleteButton(button);
+    const action = ()=>{
+        let taskForm = document.getElementById('todo');  
+        displayForm(taskForm);
+        taskForm.setAttribute('data-key', index);
+        }
+    createButton('newTask', '+', action);
+    //add event to button and set key number to the form
+    
+    
+}
+const displayDeleteButton = (index) =>{
+    deleteButton(document.getElementById('deletePro'));
+    const content = '<h5>Delete project</h5>';
+    createButton('deletePro',content,deleteProject, index);
+}
 
 
-export {hideForm ,displayForm, submitPro, submitTask}
+export {hideForm ,displayForm, submitPro, submitTask, displayPlusButton, displayDeleteButton}

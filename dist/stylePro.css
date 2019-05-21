@@ -4,7 +4,7 @@
     overflow: auto;
     background-color: yellow;
 }
-.deletePro{
+#deletePro{
     background-color: lightblue;
     width: 40%;
     margin: auto;

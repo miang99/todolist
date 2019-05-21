@@ -1,3 +1,8 @@
+const createTaskContainer = () =>{
+    const child = document.createElement('div');
+    child.className = 'info';
+    document.querySelector('.projectDisplay').appendChild(child);
+}
 const taskTitle = (title, index) =>{
     console.log(title);
     let child = document.createElement('div');
@@ -31,13 +36,14 @@ const taskState = (parent, title, state) =>{
     parent.appendChild(child);
 }
 const taskDisplay = (tasks, index) =>{
+    createTaskContainer();
     const parent = document.querySelector('.info');
     if(tasks.length > 0){
         parent.innerHTML = '';
         tasks.forEach((element) =>{
         taskTitle(element.title, index);
         taskDetail(element, index);
-    });
+        });
     }else parent.innerText = 'Nothing to show. Please click the button (+) to add a new task.';
     
 

@@ -1,4 +1,14 @@
 import {getData, setLocalStorage} from './store.js';
+import {displayProject} from './display.js';
+
+const reset = (change= false) =>{
+    const projects = getData();
+    displayProject();
+    if(change){
+        document.querySelector('.projectDisplay').innerHTML = '';
+        document.querySelector('.info').innerHTML = '';
+    }
+}
 
 export const deleteProject = (e) =>{
     const projects = getData();
