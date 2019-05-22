@@ -1,10 +1,9 @@
 import {getData} from './store.js';
 import {hideForm, displayForm, submitPro, submitTask} from './UI.js';
-import {displayProject} from './display.js';
+import {displayProject, displayInfo} from './display.js';
 
 //set up Data
 let projects = [];
-let tasks = [];
 projects = getData();
 console.table(projects);
 //get html elements
@@ -38,5 +37,5 @@ taskForm.addEventListener('submit',(e)=>{
     submitTask(projects);
     e.target.reset();
     hideForm(taskForm);
-
+    displayInfo(e);
 });

@@ -46,9 +46,6 @@ const displayPlusButton = (index) =>{
         taskForm.setAttribute('data-key', index);
         }
     createButton('newTask', '+', action);
-    //add event to button and set key number to the form
-    
-    
 }
 const displayDeleteButton = (index) =>{
     deleteButton(document.getElementById('deletePro'));

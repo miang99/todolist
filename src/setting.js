@@ -1,12 +1,12 @@
 import {getData, setLocalStorage} from './store.js';
-import {displayProject} from './display.js';
+import {displayProject, displayInfo} from './display.js';
 
-const reset = (change= false) =>{
-    const projects = getData();
-    displayProject();
+const reset = (projects, change,e) =>{
+    displayProject(projects);
     if(change){
-        document.querySelector('.projectDisplay').innerHTML = '';
-        document.querySelector('.info').innerHTML = '';
+        displayInfo(e);
+    }else{
+        e.target.parentNode.innerHTML = '';
     }
 }
 
@@ -16,7 +16,8 @@ export const deleteProject = (e) =>{
     projects.splice(index,1);
     console.log(projects);
     setLocalStorage(projects);
-    e.target.parentNode.innerHTML = ''; 
+    reset(projects, false, e);
+    
 }
 const getTask = (e) =>{
     const projects = getData();

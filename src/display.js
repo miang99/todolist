@@ -31,10 +31,10 @@ const projectDetail = (e) =>{
 }
 const displayPro = (pro) =>{
     const parent = document.querySelector('.projectDisplay');
-    const title = `<h2>${pro.name}</h2>  `;
+    const content = `<h2>${pro.name}</h2> <p><b>Note: </b>${pro.note}</p> `;
     const nameClass = 'proTitle';
     parent.innerHTML = '';    //reset the container
-    displaylist(parent,title,pro.index, nameClass);
+    displaylist(parent,content,pro.index, nameClass);
 }
 const displayInfo = (e) =>{
     const pro = projectDetail(e);
@@ -44,4 +44,4 @@ const displayInfo = (e) =>{
     displayDeleteButton(pro.index);    
 }
 
-export {displayProject}
+export {displayProject, displayInfo}

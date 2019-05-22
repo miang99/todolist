@@ -7,6 +7,9 @@ html,body{
     margin: 0;
     padding: 0;
 }
+body{
+    min-height: 100vh;
+}
 header{
     background-color: lightblue;
     margin: 0;
@@ -19,19 +22,20 @@ header{
 }
 #content{
     display: flex;
-    height: 85vh;
+    min-height: 85vh;
 }
 .projectDisplay{
     margin-top: 10vh;
     width: 80%;
-    height: 85vh;
+    min-height: 85vh;
     position: relative;
+    padding: 0 10px;
 }
 nav{
     background-color: whitesmoke;
     margin-top: 10vh;
     width: 20%;
-    height: 85vh;
+    min-height: 85vh;
     border-right: 1px solid black;
 }
 #newPro{
@@ -68,10 +72,9 @@ footer{
     height: 5vh;
     background-color: lightblue;
     width: 100%;
-    position: absolute;
-    bottom: 0;
     text-align: center;
-    line-height: 5vh;    
+    line-height: 5vh;   
+    margin-top: 5px; 
 }
 #content button:hover{
     background-color: grey;  
