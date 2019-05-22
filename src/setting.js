@@ -19,9 +19,10 @@ export const deleteProject = (e) =>{
 }
 const getTask = (e) =>{
     const projects = getData();
-    const index = Number(e.target.parentNode.parentNode.getAttribute('data-key'));
+    const index = Number(e.target.getAttribute('data-key'));
     const project = projects[index]
-    const indexTask = Number(e.target.parentNode.getAttribute('data-task'));
+    const indexTask = Number(e.target.getAttribute('data-task'));
+    console.log(`indexTask: ${indexTask}`);
     return {projects,project, indexTask}
 }
 export const deleteTask = (e) =>{  
@@ -29,7 +30,7 @@ export const deleteTask = (e) =>{
     const tasks = info.project.tasks;
     tasks.splice(info.indexTask, 1);
     reset(info.projects,true, e);
-    
+    e.stopPropagation();
 }
 const changeState = (task) =>{
     let state = task.state;

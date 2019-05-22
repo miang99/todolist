@@ -52,6 +52,11 @@ const displayDeleteButton = (index) =>{
     const content = '<h5>Delete project</h5>';
     createButton('deletePro',content,deleteProject, index);
 }
+const collapse = (e) =>{
+    const detail = e.target.nextElementSibling;
+    if(detail.style.display == 'none'){
+        detail.style.display = 'block';
+    }else detail.style.display = 'none';
+}
 
-
-export {hideForm ,displayForm, submitPro, submitTask, displayPlusButton, displayDeleteButton}
+export {hideForm ,displayForm, submitPro, submitTask, displayPlusButton, displayDeleteButton, collapse}

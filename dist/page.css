@@ -1,7 +1,7 @@
 /* stye the page for desktop view */
 *{
     box-sizing: border-box;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 html,body{
     margin: 0;

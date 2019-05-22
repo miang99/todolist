@@ -2,12 +2,11 @@
     font-weight: bold;
     font-size: 18px;
     overflow: auto;
-    background-color: yellow;
 }
 #deletePro{
     background-color: lightblue;
     width: 30%;
-    margin: auto;
+    margin: 10px auto;
     border: 2px solid white;
     border-radius : 5px;
     text-align: center;
@@ -16,4 +15,25 @@
 }
 #deletePro > *{
     pointer-events: none;
+}
+.tasktitle{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0 5px;
+    border: 1px solid white;
+}
+.tasktitle>h3{
+    pointer-events: none;
+}
+.deleteTask{
+    height: 30px;
+    color: red;
+}
+.taskDetail div>*{
+    display: inline-block;
+}
+.taskDetail{
+    display: none;
+    transition: 2s ease-in-out;
 }
